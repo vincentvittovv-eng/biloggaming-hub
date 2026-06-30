@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>biloggaming Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="logo.jpg" alt="biloggaming logo">
+        <span>biloggaming</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#loadouts">Loadouts</a>
+        <a href="#settings">Settings</a>
+        <a href="#support">Support</a>
+        <a href="https://discord.gg/6SDzjyH6P" target="_blank">Discord</a>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <img class="hero-logo" src="logo.jpg" alt="biloggaming logo">
+
+        <div class="hero-badge">CODM CREATOR</div>
+
+        <h1>biloggaming</h1>
+
+        <p>Ranked Multiplayer • Loadouts • Live Timer Challenge</p>
+
+        <div class="hero-buttons">
+            <a href="#loadouts" class="btn red">🎮 View Loadouts</a>
+            <a href="#support" class="btn dark">❤️ Support Timer</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-label">LIVE CHALLENGE</div>
+    <h2>Current Live Rules</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🎁 TikTok Gifts</h3>
+            <p>1 Coin = <b>+15 Seconds</b></p>
+        </div>
+
+        <div class="card">
+            <h3>💬 Chat Message</h3>
+            <p><b>+2 Seconds</b></p>
+        </div>
+
+        <div class="card">
+            <h3>💸 GCash Direct</h3>
+            <p>₱1 = <b>+60 Seconds</b></p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="settings">
+    <div class="section-label">PLAYER INFO</div>
+    <h2>Player Profile</h2>
+
+    <div class="profile-panel">
+        <img src="logo.jpg" alt="biloggaming logo" class="profile-logo">
+
+        <h3>biloggaming</h3>
+        <p>CODM Content Creator • Ranked Multiplayer</p>
+
+        <div class="profile-extra">
+            <span>Clan: <b>IRA NOX</b></span>
+            <span>Clan Tag: <b>ING</b></span>
+        </div>
+
+        <div class="profile-codes">
+            <div class="profile-code-card">
+                <span>UID</span>
+                <div class="code" id="uid">6951732684901056513</div>
+                <button onclick="copyText('uid')">Copy UID</button>
+            </div>
+
+            <div class="profile-code-card">
+                <span>HUD Code</span>
+                <div class="code" id="hud">7267118437157815006-7267118437157815010</div>
+                <button onclick="copyText('hud')">Copy HUD</button>
+            </div>
+
+            <div class="profile-code-card">
+                <span>Sensitivity Code</span>
+                <div class="code" id="sensi">7657250674315400424</div>
+                <button onclick="copyText('sensi')">Copy Sensitivity</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="loadouts">
+    <div class="section-label">CODM BUILDS</div>
+    <h2>My Loadouts</h2>
+
+    <div class="featured-weapon">
+        <div class="featured-text">
+            <span class="featured-badge">⭐ WEAPON OF THE WEEK</span>
+
+            <h3>VMP</h3>
+
+            <p>
+                Fast movement, aggressive playstyle, and strong ranked performance.
+            </p>
+
+            <button onclick="openBuild('vmp')">
+                View Featured Build
+            </button>
+        </div>
+
+        <img src="vmp.png" alt="VMP Loadout">
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="weaponSearch" placeholder="Search weapon...">
+    </div>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterLoadouts('all', this)">⭐ All</button>
+        <button class="filter-btn" onclick="filterLoadouts('smg', this)">⚡ SMG</button>
+        <button class="filter-btn" onclick="filterLoadouts('ar', this)">🔥 AR</button>
+        <button class="filter-btn" onclick="filterLoadouts('sniper', this)">🎯 Sniper</button>
+        <button class="filter-btn" onclick="filterLoadouts('shotgun', this)">💥 Shotgun</button>
+        <button class="filter-btn" onclick="filterLoadouts('lmg', this)">🛡 LMG</button>
+    </div>
+
+    <div class="loadout-grid">
+
+        <div class="loadout smg" onclick="openBuild('vmp')">
+            <div class="badge">⭐ META</div>
+            <img src="vmp.png" alt="VMP Loadout">
+            <div class="loadout-info">
+                <h3>VMP</h3>
+                <p>Fast movement • Ranked SMG</p>
+                <div class="mini-tags">
+                    <span>SMG</span>
+                    <span>META</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout sniper" onclick="openBuild('tundra')">
+            <div class="badge">🎯 SNIPER</div>
+            <img src="tundra.png" alt="Tundra Loadout">
+            <div class="loadout-info">
+                <h3>Tundra</h3>
+                <p>Long range • High accuracy</p>
+                <div class="mini-tags">
+                    <span>SNIPER</span>
+                    <span>RANKED</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout smg" onclick="openBuild('sten')">
+            <div class="badge">⚡ FAST TTK</div>
+            <img src="sten.png" alt="Sten Loadout">
+            <div class="loadout-info">
+                <h3>Sten</h3>
+                <p>SMG • Fast kill potential</p>
+                <div class="mini-tags">
+                    <span>SMG</span>
+                    <span>FAST</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout ar" onclick="openBuild('so14wildfire')">
+            <div class="badge">🏆 RANKED</div>
+            <img src="so14wildfire.png" alt="SO14 Wildfire Loadout">
+            <div class="loadout-info">
+                <h3>SO14 Wildfire</h3>
+                <p>AR build • Ranked setup</p>
+                <div class="mini-tags">
+                    <span>AR</span>
+                    <span>RANKED</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout ar" onclick="openBuild('so14')">
+            <div class="badge">🏆 RANKED</div>
+            <img src="so14.png" alt="SO14 Loadout">
+            <div class="loadout-info">
+                <h3>SO14</h3>
+                <p>AR build • Stable control</p>
+                <div class="mini-tags">
+                    <span>AR</span>
+                    <span>STABLE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout smg" onclick="openBuild('switchblade')">
+            <div class="badge">💥 CLOSE RANGE</div>
+            <img src="switchblade.png" alt="Switchblade Loadout">
+            <div class="loadout-info">
+                <h3>Switchblade</h3>
+                <p>SMG • All-around</p>
+                <div class="mini-tags">
+                    <span>SMG</span>
+                    <span>CLOSE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout smg" onclick="openBuild('pdw')">
+            <div class="badge">🔥 AGGRESSIVE</div>
+            <img src="pdw.png" alt="PDW Loadout">
+            <div class="loadout-info">
+                <h3>PDW</h3>
+                <p>SMG • Spray control</p>
+                <div class="mini-tags">
+                    <span>SMG</span>
+                    <span>SPRAY</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout smg" onclick="openBuild('msmc')">
+            <div class="badge">🔥 AGGRESSIVE</div>
+            <img src="msmc.png" alt="MSMC Loadout">
+            <div class="loadout-info">
+                <h3>MSMC</h3>
+                <p>Close range • Fast push</p>
+                <div class="mini-tags">
+                    <span>SMG</span>
+                    <span>PUSH</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout lmg" onclick="openBuild('mow')">
+            <div class="badge">🛡 HEAVY FIRE</div>
+            <img src="mow.png" alt="MOW Loadout">
+            <div class="loadout-info">
+                <h3>MOW</h3>
+                <p>Heavy pressure</p>
+                <div class="mini-tags">
+                    <span>LMG</span>
+                    <span>HEAVY</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout sniper" onclick="openBuild('locus')">
+            <div class="badge">🎯 SNIPER</div>
+            <img src="locus.png" alt="Locus Loadout">
+            <div class="loadout-info">
+                <h3>Locus</h3>
+                <p>Sniper • Ranked pick</p>
+                <div class="mini-tags">
+                    <span>SNIPER</span>
+                    <span>RANKED</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout ar" onclick="openBuild('lachmann')">
+            <div class="badge">✅ STABLE</div>
+            <img src="lachmann.png" alt="Lachmann Loadout">
+            <div class="loadout-info">
+                <h3>Lachmann</h3>
+                <p>AR • Easy control</p>
+                <div class="mini-tags">
+                    <span>AR</span>
+                    <span>STABLE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout shotgun" onclick="openBuild('krm')">
+            <div class="badge">🔥 AGGRESSIVE</div>
+            <img src="krm.png" alt="KRM Loadout">
+            <div class="loadout-info">
+                <h3>KRM</h3>
+                <p>Shotgun • One shot potential</p>
+                <div class="mini-tags">
+                    <span>SHOTGUN</span>
+                    <span>CLOSE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout sniper" onclick="openBuild('dlq')">
+            <div class="badge">🎯 SNIPER</div>
+            <img src="dlq.png" alt="DLQ Loadout">
+            <div class="loadout-info">
+                <h3>DLQ</h3>
+                <p>Sniper • Classic setup</p>
+                <div class="mini-tags">
+                    <span>SNIPER</span>
+                    <span>CLASSIC</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loadout ar" onclick="openBuild('ak47')">
+            <div class="badge">⭐ META</div>
+            <img src="ak47.png" alt="AK47 Loadout">
+            <div class="loadout-info">
+                <h3>AK47</h3>
+                <p>AR • Strong ranked build</p>
+                <div class="mini-tags">
+                    <span>AR</span>
+                    <span>META</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="support">
+    <div class="section-label">SUPPORT</div>
+    <h2>Support the Stream</h2>
+
+    <div class="support-box">
+        <img src="gcash.png" class="qr" alt="GCash QR Code">
+        <p><b>GCash Name: VRV</b></p>
+        <p>GCash Direct: ₱1 = +60 Seconds</p>
+    </div>
+</section>
+
+<footer>
+    Built by biloggaming • CODM Content Creator • IRA NOX
+</footer>
+
+<div id="buildPopup" class="popup">
+    <div class="popup-content weapon-popup">
+        <button class="close-btn" onclick="closeBuild()">X</button>
+
+        <div class="popup-layout">
+            <div class="popup-image-wrap">
+                <img id="popupImage" src="" alt="Loadout Preview">
+            </div>
+
+            <div class="popup-details">
+                <div class="popup-badge" id="popupBadge">⭐ META</div>
+
+                <h2 id="popupTitle">Loadout</h2>
+
+                <div class="popup-meta">
+                    <span id="popupType">SMG</span>
+                    <span id="popupRating">98/100</span>
+                </div>
+
+                <p id="popupStyle">Weapon style</p>
+
+                <div class="details-grid">
+                    <div>
+                        <h3>Pros</h3>
+                        <ul id="popupPros"></ul>
+                    </div>
+
+                    <div>
+                        <h3>Cons</h3>
+                        <ul id="popupCons"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
